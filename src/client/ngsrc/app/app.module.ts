@@ -16,6 +16,7 @@ import { FileInfoCardComponent } from './github/file-info-card/file-info-card.co
 
 // import all of our downgraded components and services
 import './downgrades';
+import {HelloWorldComponent} from './hello-world/hello-world.component';
 
 export class AngularUrlHandlingStrategy implements UrlHandlingStrategy {
   shouldProcessUrl(url: UrlTree): boolean {
@@ -46,10 +47,12 @@ export class AngularUrlHandlingStrategy implements UrlHandlingStrategy {
     Ng1UpgradedServicesModule
   ],
   declarations: [
-    AppComponent
+    AppComponent,
+    HelloWorldComponent
   ],
   entryComponents: [
-    FileInfoCardComponent
+    FileInfoCardComponent,
+    HelloWorldComponent
   ],
   providers: [
     { provide: APP_BASE_HREF, useValue: '/' },

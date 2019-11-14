@@ -10,18 +10,24 @@
     });
 
   HeaderController.$inject = [
-    '$mdSidenav'
+    '$mdSidenav',
+    '$rootScope'
   ];
 
-  function HeaderController($mdSidenav) {
+  function HeaderController($mdSidenav, $rootScope) {
     var vm = this;
 
     vm.pageTitle = 'Dynamic Page Title';
 
     vm.closeSidenav = closeSidenav;
+    vm.showHello = showHello;
 
     function closeSidenav() {
       $mdSidenav('main-sidenav').close();
+    }
+
+    function showHello() {
+      console.log($rootScope.hello);
     }
   }
 

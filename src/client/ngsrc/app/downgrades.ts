@@ -3,6 +3,7 @@ import { downgradeInjectable, UpgradeComponent, UpgradeModule } from '@angular/u
 
 // our components
 import { FileInfoCardComponent } from './github/file-info-card/file-info-card.component';
+import {HelloWorldComponent} from './hello-world/hello-world.component';
 
 // our services
 /* empty */
@@ -19,5 +20,12 @@ angular.module('ng.downgrades', [])
         'fileInfo'
       ],
     }) as angular.IDirectiveFactory
-  )
-;
+  ).directive(
+    'aseedHelloWorld',
+    downgradeComponent({
+        component: HelloWorldComponent,
+        inputs: [
+            'fileInfo'
+        ],
+    }) as angular.IDirectiveFactory
+);
